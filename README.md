@@ -1,8 +1,8 @@
 # 🌎 EcoSphere: ESG Management & Gamification Platform
 
-**Project:** EcoSphere (Odoo Hackathon 2026 entry)  
+**Project:** EcoSphere (Odoo Hackathon 2026)  
 **Team:** Omkar Gunde (Lead, Backend), Ridamn (Frontend, QA)  
-**Evaluator:** [Evaluator's GitHub username]  
+**Evaluator:** jayp-odoo
 
 EcoSphere is a unified ESG (Environmental, Social, Governance) Management Platform that integrates carbon accounting, CSR activities, and compliance tracking into daily ERP operations, incentivizing employees through gamification (XP, badges, and rewards).
 
