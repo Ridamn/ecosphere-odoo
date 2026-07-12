@@ -1,0 +1,8 @@
+# EcoSphere ESG Gitignore
+*.pdf
+ecosphere.db
+__pycache__/
+*.pyc
+.streamlit/
+*.log
+make_commit.py
