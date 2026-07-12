@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- 1. Emission Factors View -->
+    <record id="view_ecosphere_emission_factor_tree" model="ir.ui.view">
+        <field name="name">ecosphere.emission.factor.tree</field>
+        <field name="model">ecosphere.emission.factor</field>
+        <field name="arch" type="xml">
+            <tree string="Emission Factors">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="factor"/>
+                <field name="unit"/>
+                <field name="category"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 2. Environmental Goals View -->
+    <record id="view_ecosphere_environmental_goal_tree" model="ir.ui.view">
+        <field name="name">ecosphere.environmental.goal.tree</field>
+        <field name="model">ecosphere.environmental.goal</field>
+        <field name="arch" type="xml">
+            <tree string="Environmental Goals">
+                <field name="title"/>
+                <field name="target_value"/>
+                <field name="current_value"/>
+                <field name="unit"/>
+                <field name="deadline"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 3. Carbon Transactions View -->
+    <record id="view_ecosphere_carbon_transaction_tree" model="ir.ui.view">
+        <field name="name">ecosphere.carbon.transaction.tree</field>
+        <field name="model">ecosphere.carbon.transaction</field>
+        <field name="arch" type="xml">
+            <tree string="Carbon Ledger" create="false" edit="false">
+                <field name="transaction_date"/>
+                <field name="department_id"/>
+                <field name="source_type"/>
+                <field name="source_reference"/>
+                <field name="activity_amount"/>
+                <field name="calculated_emissions"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 4. ERP Simulator View -->
+    <record id="view_ecosphere_erp_record_tree" model="ir.ui.view">
+        <field name="name">ecosphere.erp.record.tree</field>
+        <field name="model">ecosphere.erp.record</field>
+        <field name="arch" type="xml">
+            <tree string="ERP Transactions Queue">
+                <field name="date"/>
+                <field name="type"/>
+                <field name="description"/>
+                <field name="amount"/>
+                <field name="unit"/>
+                <field name="department_id"/>
+                <field name="status"/>
+                <button name="action_process_record" type="object" string="Process" class="oe_highlight" invisible="status == 'processed'"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 5. CSR Activities View -->
+    <record id="view_ecosphere_csr_activity_tree" model="ir.ui.view">
+        <field name="name">ecosphere.csr.activity.tree</field>
+        <field name="model">ecosphere.csr.activity</field>
+        <field name="arch" type="xml">
+            <tree string="CSR Campaigns">
+                <field name="title"/>
+                <field name="category_id"/>
+                <field name="date"/>
+                <field name="points_value"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 6. CSR Participations View -->
+    <record id="view_ecosphere_employee_participation_tree" model="ir.ui.view">
+        <field name="name">ecosphere.employee.participation.tree</field>
+        <field name="model">ecosphere.employee.participation</field>
+        <field name="arch" type="xml">
+            <tree string="CSR Volunteer Registrations">
+                <field name="employee_id"/>
+                <field name="activity_id"/>
+                <field name="proof_file"/>
+                <field name="approval_status"/>
+                <field name="points_earned"/>
+                <button name="action_approve_participation" type="object" string="Approve" class="btn-success" invisible="approval_status != 'pending'"/>
+                <button name="action_reject_participation" type="object" string="Reject" class="btn-danger" invisible="approval_status != 'pending'"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 7. Challenges View -->
+    <record id="view_ecosphere_challenge_tree" model="ir.ui.view">
+        <field name="name">ecosphere.challenge.tree</field>
+        <field name="model">ecosphere.challenge</field>
+        <field name="arch" type="xml">
+            <tree string="Sustainability Challenges">
+                <field name="title"/>
+                <field name="category_id"/>
+                <field name="xp"/>
+                <field name="difficulty"/>
+                <field name="deadline"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 8. Challenge Participations View -->
+    <record id="view_ecosphere_challenge_participation_tree" model="ir.ui.view">
+        <field name="name">ecosphere.challenge.participation.tree</field>
+        <field name="model">ecosphere.challenge.participation</field>
+        <field name="arch" type="xml">
+            <tree string="Challenge Logs">
+                <field name="employee_id"/>
+                <field name="challenge_id"/>
+                <field name="progress"/>
+                <field name="proof_file"/>
+                <field name="approval_status"/>
+                <button name="action_approve_participation" type="object" string="Approve" class="btn-success" invisible="approval_status != 'pending'"/>
+                <button name="action_reject_participation" type="object" string="Reject" class="btn-danger" invisible="approval_status != 'pending'"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 9. ESG Policies View -->
+    <record id="view_ecosphere_esg_policy_tree" model="ir.ui.view">
+        <field name="name">ecosphere.esg.policy.tree</field>
+        <field name="model">ecosphere.esg.policy</field>
+        <field name="arch" type="xml">
+            <tree string="ESG Policies">
+                <field name="title"/>
+                <field name="category"/>
+                <field name="effective_date"/>
+                <field name="version"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 10. Audits View -->
+    <record id="view_ecosphere_audit_tree" model="ir.ui.view">
+        <field name="name">ecosphere.audit.tree</field>
+        <field name="model">ecosphere.audit</field>
+        <field name="arch" type="xml">
+            <tree string="Internal Audits">
+                <field name="title"/>
+                <field name="scope"/>
+                <field name="auditor"/>
+                <field name="audit_date"/>
+                <field name="score"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- 11. Compliance Issues View -->
+    <record id="view_ecosphere_compliance_issue_tree" model="ir.ui.view">
+        <field name="name">ecosphere.compliance.issue.tree</field>
+        <field name="model">ecosphere.compliance.issue</field>
+        <field name="arch" type="xml">
+            <tree string="Compliance Violations">
+                <field name="description"/>
+                <field name="severity"/>
+                <field name="owner_id"/>
+                <field name="due_date"/>
+                <field name="status"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Define Actions for each Model -->
+    <record id="action_ecosphere_emission_factor" model="ir.actions.act_window">
+        <field name="name">Emission Factors</field>
+        <field name="res_model">ecosphere.emission.factor</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_ecosphere_environmental_goal" model="ir.actions.act_window">
+        <field name="name">Goals</field>
+        <field name="res_model">ecosphere.environmental.goal</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_ecosphere_carbon_transaction" model="ir.actions.act_window">
+        <field name="name">Carbon Ledger</field>
+        <field name="res_model">ecosphere.carbon.transaction</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_ecosphere_erp_record" model="ir.actions.act_window">
+        <field name="name">ERP Records Queue</field>
+        <field name="res_model">ecosphere.erp.record</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_ecosphere_csr_activity" model="ir.actions.act_window">
+        <field name="name">CSR Campaigns</field>
+        <field name="res_model">ecosphere.csr.activity</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_ecosphere_employee_participation" model="ir.actions.act_window">
+        <field name="name">Volunteer Drawer</field>
+        <field name="res_model">ecosphere.employee.participation</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_ecosphere_challenge" model="ir.actions.act_window">
+        <field name="name">Challenges</field>
+        <field name="res_model">ecosphere.challenge</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_ecosphere_challenge_participation" model="ir.actions.act_window">
+        <field name="name">Challenge Logs</field>
+        <field name="res_model">ecosphere.challenge.participation</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_ecosphere_esg_policy" model="ir.actions.act_window">
+        <field name="name">Policies</field>
+        <field name="res_model">ecosphere.esg.policy</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_ecosphere_audit" model="ir.actions.act_window">
+        <field name="name">Internal Audits</field>
+        <field name="res_model">ecosphere.audit</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_ecosphere_compliance_issue" model="ir.actions.act_window">
+        <field name="name">Compliance Issues</field>
+        <field name="res_model">ecosphere.compliance.issue</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

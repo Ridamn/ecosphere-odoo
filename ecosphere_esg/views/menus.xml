@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu Root -->
+    <menuitem id="menu_ecosphere_root" 
+              name="EcoSphere ESG" 
+              web_icon="ecosphere_esg,static/description/icon.png"
+              sequence="1"/>
+
+    <!-- 1. Environmental Section -->
+    <menuitem id="menu_ecosphere_env_root" 
+              name="Environmental" 
+              parent="menu_ecosphere_root" 
+              sequence="10"/>
+
+    <menuitem id="menu_ecosphere_erp_record_item" 
+              name="ERP Transactions Queue" 
+              parent="menu_ecosphere_env_root" 
+              action="action_ecosphere_erp_record" 
+              sequence="11"/>
+
+    <menuitem id="menu_ecosphere_carbon_transaction_item" 
+              name="Carbon Transactions Ledger" 
+              parent="menu_ecosphere_env_root" 
+              action="action_ecosphere_carbon_transaction" 
+              sequence="12"/>
+
+    <menuitem id="menu_ecosphere_emission_factor_item" 
+              name="Emission Factors" 
+              parent="menu_ecosphere_env_root" 
+              action="action_ecosphere_emission_factor" 
+              sequence="13"/>
+
+    <menuitem id="menu_ecosphere_environmental_goal_item" 
+              name="Sustainability Goals" 
+              parent="menu_ecosphere_env_root" 
+              action="action_ecosphere_environmental_goal" 
+              sequence="14"/>
+
+    <!-- 2. Social Section -->
+    <menuitem id="menu_ecosphere_social_root" 
+              name="Social" 
+              parent="menu_ecosphere_root" 
+              sequence="20"/>
+
+    <menuitem id="menu_ecosphere_csr_activity_item" 
+              name="CSR Campaigns" 
+              parent="menu_ecosphere_social_root" 
+              action="action_ecosphere_csr_activity" 
+              sequence="21"/>
+
+    <menuitem id="menu_ecosphere_employee_participation_item" 
+              name="Volunteer Approvals" 
+              parent="menu_ecosphere_social_root" 
+              action="action_ecosphere_employee_participation" 
+              sequence="22"/>
+
+    <!-- 3. Governance Section -->
+    <menuitem id="menu_ecosphere_gov_root" 
+              name="Governance" 
+              parent="menu_ecosphere_root" 
+              sequence="30"/>
+
+    <menuitem id="menu_ecosphere_esg_policy_item" 
+              name="Policies Hub" 
+              parent="menu_ecosphere_gov_root" 
+              action="action_ecosphere_esg_policy" 
+              sequence="31"/>
+
+    <menuitem id="menu_ecosphere_audit_item" 
+              name="Internal Audits" 
+              parent="menu_ecosphere_gov_root" 
+              action="action_ecosphere_audit" 
+              sequence="32"/>
+
+    <menuitem id="menu_ecosphere_compliance_issue_item" 
+              name="Compliance Issues" 
+              parent="menu_ecosphere_gov_root" 
+              action="action_ecosphere_compliance_issue" 
+              sequence="33"/>
+
+    <!-- 4. Gamification Section -->
+    <menuitem id="menu_ecosphere_gamify_root" 
+              name="Gamification" 
+              parent="menu_ecosphere_root" 
+              sequence="40"/>
+
+    <menuitem id="menu_ecosphere_challenge_item" 
+              name="Challenges Bulletin" 
+              parent="menu_ecosphere_gamify_root" 
+              action="action_ecosphere_challenge" 
+              sequence="41"/>
+
+    <menuitem id="menu_ecosphere_challenge_participation_item" 
+              name="Challenge Logs" 
+              parent="menu_ecosphere_gamify_root" 
+              action="action_ecosphere_challenge_participation" 
+              sequence="42"/>
+</odoo>
